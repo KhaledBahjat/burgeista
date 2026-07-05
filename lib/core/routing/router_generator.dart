@@ -19,7 +19,7 @@ class RouterGenerator {
       ),
       GoRoute(
         path: AppRouts.homeView,
-        builder: (context, state) => const HomeView(),
+        builder: (context, state) =>  HomeView(),
       ),
       GoRoute(
         path: AppRouts.cartView,

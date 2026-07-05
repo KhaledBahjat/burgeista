@@ -24,7 +24,7 @@ class _RootViewState extends State<RootView> {
     super.initState();
     pageController = PageController(initialPage: currentIndex);
     screens = [
-      const HomeView(),
+       HomeView(),
       const CartView(),
       const OrderView(),
       const ProfileView(),
