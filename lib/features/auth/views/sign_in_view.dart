@@ -1,14 +1,15 @@
 import 'package:burgeista/core/constant/app_color.dart';
 import 'package:burgeista/core/constant/spacing.dart';
+import 'package:burgeista/core/routing/app_routs.dart';
 import 'package:burgeista/core/widgets/costom_text_feild.dart';
-import 'package:burgeista/core/widgets/coustom_btn.dart';
 import 'package:burgeista/core/widgets/coustom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class SignInView extends StatefulWidget {
-  SignInView({super.key});
+  const SignInView({super.key});
 
   @override
   State<SignInView> createState() => _SignInViewState();
@@ -22,6 +23,7 @@ class _SignInViewState extends State<SignInView> {
 
   bool _obscureText = false;
 
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -64,7 +66,21 @@ class _SignInViewState extends State<SignInView> {
                     },
                   ),
                 ),
-                HeightSpace(20),
+                HeightSpace(10),
+                // Forgot Password
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: CoustomText(
+                      text: 'Forgot Password?',
+                      color: Colors.white,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                HeightSpace(5),
                 //  Sign In Button
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -77,6 +93,28 @@ class _SignInViewState extends State<SignInView> {
                     // padding: EdgeInsets.symmetric(vertical: 16.h),
                   ),
                   onPressed: (){}, child: Text('Sign In',style: TextStyle(color: AppColor.primaryColor)),
+                ),
+                Spacer(),
+                // Dont have an account? Sign Up
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CoustomText(
+                      text: 'Don\'t have an account?',
+                      color: Colors.white,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    TextButton(
+                      onPressed: () =>GoRouter.of(context).pushReplacementNamed(AppRouts.signUpView),
+                      child: CoustomText(
+                        text: 'Sign Up',
+                        color: Colors.white,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

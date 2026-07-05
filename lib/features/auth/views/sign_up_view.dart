@@ -1,14 +1,15 @@
 import 'package:burgeista/core/constant/app_color.dart';
 import 'package:burgeista/core/constant/spacing.dart';
+import 'package:burgeista/core/routing/app_routs.dart';
 import 'package:burgeista/core/widgets/costom_text_feild.dart';
-import 'package:burgeista/core/widgets/coustom_btn.dart';
 import 'package:burgeista/core/widgets/coustom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUpView extends StatefulWidget {
-  SignUpView({super.key});
+  const SignUpView({super.key});
 
   @override
   State<SignUpView> createState() => _SignUpViewState();
@@ -26,6 +27,7 @@ class _SignUpViewState extends State<SignUpView> {
 
   bool _obscureText = false;
 
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -107,7 +109,31 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                   onPressed: () {},
                   child: Text('Sign Up', style: TextStyle(color: AppColor.primaryColor)),
+
                 ),
+                Spacer(),
+                // Do you have an account ? 
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CoustomText(
+                      text: 'Don\'t have an account?',
+                      color: Colors.white,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    TextButton(
+                      onPressed: () =>GoRouter.of(context).pushReplacementNamed(AppRouts.signUpView),
+                      child: CoustomText(
+                        text: 'Sign In',
+                        color: Colors.white,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ]
+                )
+              
               ],
             ),
           ),
