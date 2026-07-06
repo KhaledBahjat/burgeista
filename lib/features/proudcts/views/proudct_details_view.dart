@@ -88,27 +88,9 @@ class _ProudctDetailsViewState extends State<ProudctDetailsView> {
             ),
 
             Spacer(),
-            TotalWithBtnWidget(buttonText: 'Add to Cart', onAddT: () {}),
+            TotalWithBtnWidget(buttonText: 'Add to Cart', onAddT: () {}, totalPrice: 18.19),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class _SectionTitle extends StatelessWidget {
-  const _SectionTitle({required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize: 18.sp,
-        fontWeight: FontWeight.w700,
-        color: const Color(0xFF3B312E),
       ),
     );
   }

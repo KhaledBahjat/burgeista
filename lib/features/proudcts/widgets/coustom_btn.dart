@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CoustomBtn extends StatelessWidget {
-  const CoustomBtn({required this.onTap, required this.buttonText});
+  const CoustomBtn({required this.onTap, required this.buttonText, this.height, this.width, this.textSize});
 
   final VoidCallback onTap;
   final String buttonText;
-
+  final double? height, width;
+  final double?textSize;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -16,8 +17,8 @@ class CoustomBtn extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(22.r),
         child: Container(
-          height: 64.h,
-          width: 180.w,
+          height: height ?? 64.h,
+          width: width ?? 180.w,
           decoration: BoxDecoration(
             color: AppColor.primaryColor,
             borderRadius: BorderRadius.circular(22.r),
@@ -33,7 +34,7 @@ class CoustomBtn extends StatelessWidget {
           child: Text(
             buttonText,
             style: TextStyle(
-              fontSize: 18.sp,
+              fontSize: textSize ?? 18.sp,
               fontWeight: FontWeight.w700,
               color: Colors.white,
             ),

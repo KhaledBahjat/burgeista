@@ -7,9 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TotalWithBtnWidget extends StatelessWidget {
   const TotalWithBtnWidget({
-    super.key, required this.onAddT, required this.buttonText,
+    super.key, required this.onAddT, required this.buttonText, required this.totalPrice,
   });
-  final double totalPrice = 18.19;
+  final double totalPrice;
   final VoidCallback onAddT;
   final String buttonText;
   @override
