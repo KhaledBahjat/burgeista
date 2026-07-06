@@ -72,8 +72,8 @@ class Item extends StatelessWidget {
                   ),
                   Spacer(),
                   Container(
-                    height: 30.h,
-                    width: 30.w,
+                    height: 25.h,
+                    width: 25.w,
                     decoration: BoxDecoration(
                       color: AppColor.primaryColor,
                       borderRadius: BorderRadius.circular(10.r),

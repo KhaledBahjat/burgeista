@@ -83,7 +83,7 @@ class _HomeViewState extends State<HomeView> {
                     crossAxisCount: 2,
                     mainAxisSpacing: 31.h,
                     crossAxisSpacing: 22.w,
-                    childAspectRatio: 0.7,
+                    childAspectRatio: 0.65,
                   ),
                   itemBuilder: (context, index) {
                     return Item(
