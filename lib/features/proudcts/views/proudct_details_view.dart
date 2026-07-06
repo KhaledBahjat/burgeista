@@ -88,7 +88,7 @@ class _ProudctDetailsViewState extends State<ProudctDetailsView> {
             ),
 
             Spacer(),
-            AddToCartWidget(),
+            TotalWithBtnWidget(buttonText: 'Add to Cart', onAddT: () {}),
           ],
         ),
       ),

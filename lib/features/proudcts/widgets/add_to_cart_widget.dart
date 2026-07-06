@@ -5,11 +5,13 @@ import 'package:burgeista/features/proudcts/widgets/coustom_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AddToCartWidget extends StatelessWidget {
-  const AddToCartWidget({
-    super.key,
+class TotalWithBtnWidget extends StatelessWidget {
+  const TotalWithBtnWidget({
+    super.key, required this.onAddT, required this.buttonText,
   });
   final double totalPrice = 18.19;
+  final VoidCallback onAddT;
+  final String buttonText;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,8 +41,8 @@ class AddToCartWidget extends StatelessWidget {
           ),
           const Spacer(),
           CoustomBtn(
-            buttonText: 'Add To Cart',
-            onTap: () {},
+            buttonText: buttonText,
+            onTap: onAddT,
           ),
         ],
       ),
