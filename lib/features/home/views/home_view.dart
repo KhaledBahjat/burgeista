@@ -33,7 +33,7 @@ class _HomeViewState extends State<HomeView> {
               Header(),
               HeightSpace(17),
               SearchFeild(),
-              HeightSpace(41),
+              HeightSpace(20),
               SizedBox(
                 height: 40.h,
                 child: ListView.builder(
@@ -74,9 +74,10 @@ class _HomeViewState extends State<HomeView> {
                   },
                 ),
               ),
-              HeightSpace(10),
+              HeightSpace(20),
               Expanded(
                 child: GridView.builder(
+                  padding: EdgeInsets.only(bottom: 20.h),
                   itemCount: 10,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,

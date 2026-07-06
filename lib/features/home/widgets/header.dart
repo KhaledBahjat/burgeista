@@ -1,6 +1,7 @@
 import 'package:burgeista/core/constant/app_color.dart';
 import 'package:burgeista/core/constant/spacing.dart';
 import 'package:burgeista/core/widgets/coustom_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -35,7 +36,9 @@ class Header extends StatelessWidget {
 
         Spacer(),
 
-        CircleAvatar(radius: 31.r),
+        CircleAvatar(
+          backgroundColor: AppColor.primaryColor,
+          radius: 31.r,child: Icon(CupertinoIcons.person,size: 30.sp,color: Colors.white,),),
       ],
     );
   }
