@@ -53,8 +53,6 @@ class _SignUpViewState extends State<SignUpView> {
                   controller: nameController,
                 ),
                 HeightSpace(20),
-                CoustomTextFeild(hintText: 'Phone', controller: phoneController),
-                HeightSpace(20),
                 CoustomTextFeild(
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Email Address',
@@ -66,24 +64,6 @@ class _SignUpViewState extends State<SignUpView> {
                   hintText: 'Password',
                   obscureText: _obscureText,
                   controller: passwordController,
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _obscureText ? Icons.visibility_off : Icons.visibility,
-                      color: Colors.grey,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        _obscureText = !_obscureText;
-                      });
-                    },
-                  ),
-                ),
-                HeightSpace(20),
-                CoustomTextFeild(
-                  keyboardType: TextInputType.visiblePassword,
-                  hintText: 'Confirm Password',
-                  obscureText: _obscureText,
-                  controller: confirmPasswordController,
                   suffixIcon: IconButton(
                     icon: Icon(
                       _obscureText ? Icons.visibility_off : Icons.visibility,
@@ -117,13 +97,13 @@ class _SignUpViewState extends State<SignUpView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CoustomText(
-                      text: 'Don\'t have an account?',
+                      text: 'Do you have an account ?',
                       color: Colors.white,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                     ),
                     TextButton(
-                      onPressed: () =>GoRouter.of(context).pushReplacementNamed(AppRouts.signUpView),
+                      onPressed: () =>GoRouter.of(context).pushReplacementNamed(AppRouts.signInView),
                       child: CoustomText(
                         text: 'Sign In',
                         color: Colors.white,
