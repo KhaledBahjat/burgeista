@@ -4,13 +4,11 @@ import 'package:burgeista/core/widgets/coustom_text.dart';
 import 'package:burgeista/features/home/widgets/header.dart';
 import 'package:burgeista/features/home/widgets/proudct_card.dart';
 import 'package:burgeista/features/home/widgets/search_feild.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomeView extends StatefulWidget {
-  HomeView({super.key});
+  const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();

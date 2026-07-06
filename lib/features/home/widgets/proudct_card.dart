@@ -53,7 +53,12 @@ class Item extends StatelessWidget {
             HeightSpace(10),
             Row(
               children: [
-                Icon(Icons.star, color: Color(0xffFF9633), size: 20.sp),
+            Text( 
+                  '⭐',
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                  ),
+                ),
                 WidthSpace(5),
                 CoustomText(
                   text: rating.toString(),

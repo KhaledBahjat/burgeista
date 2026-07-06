@@ -9,7 +9,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 
 
 class RootView extends StatefulWidget {
-  RootView({super.key});
+  const RootView({super.key});
 
   @override
   State<RootView> createState() => _RootViewState();
@@ -20,6 +20,7 @@ class _RootViewState extends State<RootView> {
   late PageController pageController;
   int currentIndex = 0;
 
+  @override
   initState() {
     super.initState();
     pageController = PageController(initialPage: currentIndex);
