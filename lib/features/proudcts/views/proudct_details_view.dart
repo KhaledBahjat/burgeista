@@ -30,7 +30,10 @@ class _ProudctDetailsViewState extends State<ProudctDetailsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10),
         child: Column(
