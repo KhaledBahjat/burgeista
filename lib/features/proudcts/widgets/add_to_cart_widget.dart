@@ -1,12 +1,12 @@
 import 'package:burgeista/core/constant/app_color.dart';
 import 'package:burgeista/core/constant/spacing.dart';
 import 'package:burgeista/core/widgets/coustom_text.dart';
-import 'package:burgeista/features/proudcts/widgets/add_to_cart_btn.dart';
+import 'package:burgeista/features/proudcts/widgets/coustom_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TotalAndAddToCart extends StatelessWidget {
-  const TotalAndAddToCart({
+class AddToCartWidget extends StatelessWidget {
+  const AddToCartWidget({
     super.key,
   });
   final double totalPrice = 18.19;
@@ -36,7 +36,8 @@ class TotalAndAddToCart extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        AddToCartButton(
+        CoustomBtn(
+          buttonText: 'Add To Cart',
           onTap: () {},
         ),
       ],

@@ -2,10 +2,11 @@ import 'package:burgeista/core/constant/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AddToCartButton extends StatelessWidget {
-  const AddToCartButton({required this.onTap});
+class CoustomBtn extends StatelessWidget {
+  const CoustomBtn({required this.onTap, required this.buttonText});
 
   final VoidCallback onTap;
+  final String buttonText;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class AddToCartButton extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            'Add To Cart',
+            buttonText,
             style: TextStyle(
               fontSize: 18.sp,
               fontWeight: FontWeight.w700,
