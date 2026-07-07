@@ -3,7 +3,6 @@ import 'package:burgeista/core/constant/spacing.dart';
 import 'package:burgeista/core/widgets/coustom_text.dart';
 import 'package:burgeista/core/widgets/total_with_btn_widget.dart';
 import 'package:burgeista/features/checkout/widgets/coustomdetails_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,6 +16,81 @@ class CheckOutView extends StatefulWidget {
 class _CheckOutViewState extends State<CheckOutView> {
   String selectedMethod = "Cash";
   bool isChecked = false;
+
+  void _showPaymentSuccessDialog() {
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (dialogContext) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          
+          elevation: 0,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 28.h),
+            decoration: BoxDecoration(
+              color:  Colors.black,
+              borderRadius: BorderRadius.circular(24.r),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 74.w,
+                  height: 74.w,
+                  decoration: const BoxDecoration(
+                    color: AppColor.primaryColor,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.check,
+                    color: Colors.white,
+                    size: 40,
+                  ),
+                ),
+                HeightSpace(18),
+                CoustomText(
+                  text: 'Success !',
+                  fontSize: 28,
+                  fontWeight: FontWeight.w700,
+                  color: AppColor.primaryColor,
+                ),
+                HeightSpace(12),
+                CoustomText(
+                  text: 'Your payment was successful.\nA receipt for this purchase has\nbeen sent to your email.',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: const Color(0xFFB7B7B7),
+                ),
+                HeightSpace(28),
+                SizedBox(
+                  width: double.infinity,
+                  height: 54.h,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColor.primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.r),
+                      ),
+                    ),
+                    onPressed: () => Navigator.of(dialogContext).pop(),
+                    child: const Text(
+                      'Go Back',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,7 +249,7 @@ class _CheckOutViewState extends State<CheckOutView> {
           ),
         ),
         child: TotalWithBtnWidget(
-          onAddT: () {},
+          onAddT: _showPaymentSuccessDialog,
           buttonText: 'Pay Now',
           totalPrice: 22.00,
         ),

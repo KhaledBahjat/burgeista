@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -16,7 +17,8 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 10),
-      width: 100,
+      
+      width: 100.w,
       decoration: BoxDecoration(
         color: const Color(0xFF3B2F2F),
         borderRadius: BorderRadius.circular(20),
@@ -26,8 +28,8 @@ class ProductCard extends StatelessWidget {
         children: [
           // Image Section
           Container(
-            height: 80,
-            width: double.infinity,
+            height: 80.h,
+            width: 100.w,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.vertical(
@@ -81,6 +83,8 @@ class ProductCard extends StatelessWidget {
           ),
         ],
       ),
+    
+    
     );
   }
 }

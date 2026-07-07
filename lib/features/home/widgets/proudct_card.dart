@@ -35,11 +35,13 @@ class Item extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
-                imagePath,
-                height: 120.h,
-                width: double.infinity,
-                fit: BoxFit.cover,
+              Center(
+                child: Image.asset(
+                  imagePath,
+                  height: 120.h,
+                  width: 120.w,
+                  fit: BoxFit.cover,
+                ),
               ),
               HeightSpace(10),
               CoustomText(
