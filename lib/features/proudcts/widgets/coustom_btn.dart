@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CoustomBtn extends StatelessWidget {
-  const CoustomBtn({required this.onTap, required this.buttonText, this.height, this.width, this.textSize});
+  const CoustomBtn({super.key, required this.onTap, required this.buttonText, this.height, this.width, this.textSize});
 
   final VoidCallback onTap;
   final String buttonText;

@@ -1,12 +1,9 @@
-import 'dart:developer';
 
-import 'package:burgeista/core/constant/app_color.dart';
 import 'package:burgeista/core/constant/spacing.dart';
 import 'package:burgeista/core/widgets/coustom_text.dart';
 import 'package:burgeista/features/proudcts/widgets/add_to_cart_widget.dart';
 import 'package:burgeista/features/proudcts/widgets/option_card.dart';
 import 'package:burgeista/features/proudcts/widgets/slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
