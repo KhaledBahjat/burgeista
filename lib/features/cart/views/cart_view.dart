@@ -19,37 +19,37 @@ class _CartViewState extends State<CartView> {
   }
   final List<Map<String, dynamic>> cartItems = [
     {
-      'image': 'assets/tst.png',
+      'image': 'assets/test/tst.png',
       'text': 'Cheese Burger',
       'desc': 'With extra cheese',
       'number': 1,
     },
     {
-      'image': 'assets/tst.png',
+      'image': 'assets/test/tst.png',
       'text': 'Veggie Burger',
       'desc': 'With fresh vegetables',
       'number': 2,
     },
     {
-      'image': 'assets/tst.png',
+      'image': 'assets/test/tst.png',
       'text': 'Chicken Burger',
       'desc': 'With crispy chicken',
       'number': 1,
     },
       {
-      'image': 'assets/tst.png',
+      'image': 'assets/test/tst.png',
       'text': 'Chicken Burger',
       'desc': 'With crispy chicken',
       'number': 1,
     },
       {
-      'image': 'assets/tst.png',
+      'image': 'assets/test/tst.png',
       'text': 'Chicken Burger',
       'desc': 'With crispy chicken',
       'number': 1,
     },
       {
-      'image': 'assets/tst.png',
+      'image': 'assets/test/tst.png',
       'text': 'Chicken Burger',
       'desc': 'With crispy chicken',
       'number': 1,

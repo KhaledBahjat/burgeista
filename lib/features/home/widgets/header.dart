@@ -17,7 +17,7 @@ class Header extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SvgPicture.asset(
-              'assets/logo2.svg',
+              'assets/test/logo2.svg',
               colorFilter: const ColorFilter.mode(
                 AppColor.primaryColor,
                 BlendMode.srcIn,

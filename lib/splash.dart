@@ -17,11 +17,11 @@ class SplashView extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 100.w),
             child: Center(
-              child: SvgPicture.asset('assets/logo.svg', width: 600.w),
+              child: SvgPicture.asset('assets/test/logo.svg', width: 600.w),
             ),
           ),
           Spacer(),
-          Image.asset('assets/spl.png', width: 439.w,),
+          Image.asset('assets/test/spl.png', width: 439.w,),
         ],
       ),
     );

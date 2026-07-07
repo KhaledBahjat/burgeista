@@ -88,7 +88,7 @@ class _HomeViewState extends State<HomeView> {
                   itemBuilder: (context, index) {
                     return Item(
                       txt: 'Item ${index+1}',
-                      imagePath: 'assets/tst.png',
+                      imagePath: 'assets/test/tst.png',
                       rating: 5,
                       description: 'Description for Item $index',
                     );

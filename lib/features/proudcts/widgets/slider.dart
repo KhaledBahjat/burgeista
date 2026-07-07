@@ -14,7 +14,7 @@ class SpicyCoustomized extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset("assets/detils.png", height: 300.h),
+        Image.asset("assets/test/detils.png", height: 300.h),
     
         Spacer(),
         Column(

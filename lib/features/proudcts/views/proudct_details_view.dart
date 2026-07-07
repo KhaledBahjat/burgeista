@@ -60,7 +60,7 @@ class _ProudctDetailsViewState extends State<ProudctDetailsView> {
                 scrollDirection: Axis.horizontal,
                 itemCount: toppings.length,
                 itemBuilder: (context, index) {
-                  return  ProductCard(image: 'assets/tom.png', name: 'tomato', onAdd: () {},);
+                  return  ProductCard(image: 'assets/test/tom.png', name: 'tomato', onAdd: () {},);
                 },
               ),
             ),
@@ -79,7 +79,7 @@ class _ProudctDetailsViewState extends State<ProudctDetailsView> {
                 scrollDirection: Axis.horizontal,
                 itemCount: toppings.length,
                 itemBuilder: (context, index) {
-                  return  ProductCard(image: 'assets/sald.png', name: 'tomato', onAdd: () {},);
+                  return  ProductCard(image: 'assets/test/sald.png', name: 'tomato', onAdd: () {},);
                 },
               ),
             ),

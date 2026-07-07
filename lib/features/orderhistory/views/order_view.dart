@@ -37,11 +37,11 @@ class OrderHistoryView extends StatelessWidget {
                               bottom: -5,
                               right: 0,
                               left: 0,
-                              child: Image.asset('assets/shadow.png'),
+                              child: Image.asset('assets/test/shadow.png'),
                             ),
                             Center(
                               child: Image.asset(
-                                'assets/tst.png',
+                                'assets/test/tst.png',
                                 width: 90,
                                 height: 90,
                               ),
