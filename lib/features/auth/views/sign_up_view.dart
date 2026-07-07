@@ -21,101 +21,149 @@ class _SignUpViewState extends State<SignUpView> {
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
-      TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
 
   bool _obscureText = false;
-
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        backgroundColor: AppColor.primaryColor,
-        body: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: Column(
-              children: [
-                SvgPicture.asset('assets/logo.svg', width: 600.w),
-                CoustomText(
-                  text: 'Register to discover the best burgers in town!',
-                  color: Colors.white,
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w500,
-                ),
+        body: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              HeightSpace(100),
+              SvgPicture.asset(
+                'assets/test/logo2.svg',
+                color: AppColor.primaryColor,
+              ),
+              CoustomText(
+                text: 'Register to discover the best burgers in town!',
+                // color: Colors.white,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w500,
+              ),
 
-                HeightSpace(70),
-                CoustomTextFeild(
-                  keyboardType: TextInputType.emailAddress,
-                  hintText: 'Name',
-                  controller: nameController,
-                ),
-                HeightSpace(20),
-                CoustomTextFeild(
-                  keyboardType: TextInputType.emailAddress,
-                  hintText: 'Email Address',
-                  controller: emailController,
-                ),
-                HeightSpace(20),
-                CoustomTextFeild(
-                  keyboardType: TextInputType.visiblePassword,
-                  hintText: 'Password',
-                  obscureText: _obscureText,
-                  controller: passwordController,
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _obscureText ? Icons.visibility_off : Icons.visibility,
-                      color: Colors.grey,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        _obscureText = !_obscureText;
-                      });
-                    },
-                  ),
-                ),
-                HeightSpace(20),
-                //  Sign In Button
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.r),
-                    ),
-                    minimumSize: Size(200.w, 56.h),
-                    // padding: EdgeInsets.symmetric(vertical: 16.h),
-                  ),
-                  onPressed: () {},
-                  child: Text('Sign Up', style: TextStyle(color: AppColor.primaryColor)),
+              HeightSpace(70),
 
-                ),
-                Spacer(),
-                // Do you have an account ? 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CoustomText(
-                      text: 'Do you have an account ?',
-                      color: Colors.white,
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w500,
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.all(20.w),
+                  decoration: BoxDecoration(
+                    color: AppColor.primaryColor,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30.r),
+                      topRight: Radius.circular(30.r),
                     ),
-                    TextButton(
-                      onPressed: () =>GoRouter.of(context).pushReplacementNamed(AppRouts.signInView),
-                      child: CoustomText(
-                        text: 'Sign In',
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: SingleChildScrollView(
+                          keyboardDismissBehavior:
+                              ScrollViewKeyboardDismissBehavior.onDrag,
+                          child: Column(
+                            children: [
+                              HeightSpace(20),
+
+                              CoustomTextFeild(
+                                keyboardType: TextInputType.name,
+                                hintText: 'Name',
+                                controller: nameController,
+                              ),
+
+                              HeightSpace(20),
+
+                              CoustomTextFeild(
+                                keyboardType: TextInputType.emailAddress,
+                                hintText: 'Email Address',
+                                controller: emailController,
+                              ),
+
+                              HeightSpace(20),
+
+                              CoustomTextFeild(
+                                keyboardType: TextInputType.visiblePassword,
+                                hintText: 'Password',
+                                obscureText: _obscureText,
+                                controller: passwordController,
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    _obscureText
+                                        ? Icons.visibility_off
+                                        : Icons.visibility,
+                                    color: AppColor.primaryColor,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _obscureText = !_obscureText;
+                                    });
+                                  },
+                                ),
+                              ),
+
+                              HeightSpace(30),
+
+                              SizedBox(
+                                width: double.infinity,
+                                height: 56.h,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.r),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    if (_formKey.currentState!.validate()) {
+
+                                    }
+                                  },
+                                  child: Text(
+                                    'Sign Up',
+                                    style: TextStyle(
+                                      color: AppColor.primaryColor,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
-                  ]
-                )
-              
-              ],
-            ),
+
+                      const Divider(color: Colors.white24),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CoustomText(
+                            text: 'Do you have an account?',
+                            color: Colors.white,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              context.pushReplacementNamed(AppRouts.signInView);
+                            },
+                            child: CoustomText(
+                              text: 'Sign In',
+                              color: Colors.white,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      HeightSpace(10),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

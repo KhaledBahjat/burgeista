@@ -32,15 +32,32 @@ class CoustomTextFeild extends StatelessWidget {
       cursorColor: AppColor.primaryColor,
       cursorHeight: 20.h,
       decoration: InputDecoration(
+        disabledBorder:  OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white,width: 2.sp),
+          borderRadius: BorderRadius.circular(18.r),
+
+        ),
+        errorStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 14.sp,
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white,width: 2.sp),
+          borderRadius: BorderRadius.circular(18.r),
+
+        ),
+        // suffixIconColor: Colors.white,
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
+          borderSide: BorderSide(color: Colors.white,width: 2.sp),
           borderRadius: BorderRadius.circular(18.r),
+
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(18.r),
         ),
+        
         hintText: hintText,
         filled: true,
         fillColor: Colors.white,

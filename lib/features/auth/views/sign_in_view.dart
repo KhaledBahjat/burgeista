@@ -21,103 +21,151 @@ class _SignInViewState extends State<SignInView> {
 
   final TextEditingController passwordController = TextEditingController();
 
-  bool _obscureText = false;
-
+  bool _obscureText = true;
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        backgroundColor: AppColor.primaryColor,
-        body: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: Column(
-              children: [
-                SvgPicture.asset('assets/logo.svg', width: 600.w),
-                CoustomText(
-                  text: 'Discover the best burgers in town!',
-                  color: Colors.white,
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-
-                HeightSpace(70),
-                CoustomTextFeild(
-                  keyboardType: TextInputType.emailAddress,
-                  hintText: 'Email Address',
-                  controller: emailController,
-                ),
-                HeightSpace(20),
-                CoustomTextFeild(
-                  keyboardType: TextInputType.visiblePassword,
-                  hintText: 'Password',
-                  obscureText: _obscureText,
-                  controller: passwordController,
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _obscureText ? Icons.visibility_off : Icons.visibility,
-                      color: Colors.grey,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        _obscureText = !_obscureText;
-                      });
-                    },
-                  ),
-                ),
-                HeightSpace(10),
-                // Forgot Password
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: CoustomText(
-                      text: 'Forgot Password?',
-                      color: Colors.white,
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w500,
+        backgroundColor: Colors.white,
+        body: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              HeightSpace(100),
+              SvgPicture.asset(
+                'assets/test/logo2.svg',
+                color: AppColor.primaryColor,
+              ),
+              CoustomText(
+                text: 'Discover the best burgers in town!',
+                // color: Colors.white,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w500,
+              ),
+          
+              HeightSpace(70),
+          
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.all(20.w),
+                  decoration: BoxDecoration(
+                    color: AppColor.primaryColor,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30.r),
+                      topRight: Radius.circular(30.r),
                     ),
                   ),
-                ),
-                HeightSpace(5),
-                //  Sign In Button
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.r),
-                      side: BorderSide(color: Colors.white),
-                    ),
-                    minimumSize: Size(200.w, 56.h),
-                    // padding: EdgeInsets.symmetric(vertical: 16.h),
-                  ),
-                  onPressed: (){}, child: Text('Sign In',style: TextStyle(color: AppColor.primaryColor)),
-                ),
-                Spacer(),
-                // Dont have an account? Sign Up
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CoustomText(
-                      text: 'Don\'t have an account?',
-                      color: Colors.white,
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    TextButton(
-                      onPressed: () =>GoRouter.of(context).pushReplacementNamed(AppRouts.signUpView),
-                      child: CoustomText(
-                        text: 'Sign Up',
-                        color: Colors.white,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: SingleChildScrollView(
+                          keyboardDismissBehavior:
+                              ScrollViewKeyboardDismissBehavior.onDrag,
+                          child: Column(
+                            children: [
+                              CoustomTextFeild(
+                                keyboardType: TextInputType.emailAddress,
+                                hintText: 'Email Address',
+                                controller: emailController,
+                              ),
+          
+                              HeightSpace(20),
+          
+                              CoustomTextFeild(
+                                keyboardType: TextInputType.visiblePassword,
+                                hintText: 'Password',
+                                obscureText: _obscureText,
+                                controller: passwordController,
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    _obscureText
+                                        ? Icons.visibility_off
+                                        : Icons.visibility,
+                                    color: Colors.grey,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _obscureText = !_obscureText;
+                                    });
+                                  },
+                                ),
+                              ),
+          
+                              HeightSpace(10),
+          
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: TextButton(
+                                  onPressed: () {},
+                                  child: CoustomText(
+                                    text: 'Forgot Password?',
+                                    color: Colors.white,
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+          
+                              HeightSpace(10),
+          
+                              SizedBox(
+                                width: double.infinity,
+                                height: 56.h,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.r),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    if (_formKey.currentState!.validate()) {
+                                    }
+                                  },
+                                  child: Text(
+                                    'Sign In',
+                                    style: TextStyle(
+                                      color: AppColor.primaryColor,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+          
+                      const Divider(color: Colors.white24, height: 20),
+          
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CoustomText(
+                            text: "Don't have an account?",
+                            color: Colors.white,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              context.pushReplacementNamed(AppRouts.signUpView);
+                            },
+                            child: CoustomText(
+                              text: "Sign Up",
+                              color: Colors.white,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
