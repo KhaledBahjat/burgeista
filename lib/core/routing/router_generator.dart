@@ -41,7 +41,7 @@ class RouterGenerator {
       ),
       GoRoute(
         path: AppRouts.orderView,
-        builder: (context, state) => const OrderView(),
+        builder: (context, state) => const OrderHistoryView(),
       ),
       GoRoute(
         path: AppRouts.splashView,

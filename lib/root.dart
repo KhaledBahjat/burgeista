@@ -27,7 +27,7 @@ class _RootViewState extends State<RootView> {
     screens = [
        HomeView(),
       const CartView(),
-      const OrderView(),
+       OrderHistoryView(),
       const ProfileView(),
     ];
   }
