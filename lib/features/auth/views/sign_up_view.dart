@@ -33,7 +33,7 @@ class _SignUpViewState extends State<SignUpView> {
           key: _formKey,
           child: Column(
             children: [
-              HeightSpace(100),
+              HeightSpace(120),
               SvgPicture.asset(
                 'assets/test/logo2.svg',
                 color: AppColor.primaryColor,

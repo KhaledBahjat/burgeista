@@ -16,7 +16,6 @@ class SignInView extends StatefulWidget {
 }
 
 class _SignInViewState extends State<SignInView> {
-  @override
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
@@ -33,7 +32,7 @@ class _SignInViewState extends State<SignInView> {
           key: _formKey,
           child: Column(
             children: [
-              HeightSpace(100),
+              HeightSpace(120),
               SvgPicture.asset(
                 'assets/test/logo2.svg',
                 color: AppColor.primaryColor,
@@ -102,7 +101,7 @@ class _SignInViewState extends State<SignInView> {
                                   child: CoustomText(
                                     text: 'Forgot Password?',
                                     color: Colors.white,
-                                    fontSize: 12.sp,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -131,6 +130,28 @@ class _SignInViewState extends State<SignInView> {
                                     ),
                                   ),
                                 ),
+                                  ),
+
+                                  HeightSpace(15),
+
+                                  SizedBox(
+                                    width: double.infinity,
+                                    height: 56.h,
+                                    child: OutlinedButton(
+                                      style: OutlinedButton.styleFrom(
+                                        side: const BorderSide(color: Colors.white),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(18.r),
+                                        ),
+                                      ),
+                                      onPressed: () {
+                                        context.pushReplacementNamed(AppRouts.rootView);
+                                      },
+                                      child: const Text(
+                                        'Continue as Guest',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
                               ),
                             ],
                           ),
