@@ -1,4 +1,3 @@
-
 import 'package:burgeista/core/constant/app_color.dart';
 import 'package:burgeista/core/constant/spacing.dart';
 import 'package:burgeista/core/routing/app_routs.dart';
@@ -8,7 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class Item extends StatelessWidget {
-  const Item({super.key, required this.txt, required this.imagePath, required this.rating, required this.description});
+  const Item({
+    super.key,
+    required this.txt,
+    required this.imagePath,
+    required this.rating,
+    required this.description,
+  });
   final String txt;
   final String imagePath;
   final int rating;
@@ -35,13 +40,23 @@ class Item extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Image.asset(
-                  imagePath,
-                  height: 120.h,
-                  width: 120.w,
-                  fit: BoxFit.cover,
-                ),
+              Stack(
+                children: [
+                  Positioned(
+                    top: 80.h,
+                    left: 0,
+                    right: 0,
+                    bottom: -10.h,
+                    child: Image.asset('assets/test/shadow.png')),
+                  Center(
+                    child: Image.asset(
+                      imagePath,
+                      height: 120.h,
+                      width: 120.w,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
               ),
               HeightSpace(10),
               CoustomText(
@@ -59,12 +74,7 @@ class Item extends StatelessWidget {
               HeightSpace(10),
               Row(
                 children: [
-              Text( 
-                    '⭐',
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                    ),
-                  ),
+                  Text('⭐', style: TextStyle(fontSize: 16.sp)),
                   WidthSpace(5),
                   CoustomText(
                     text: rating.toString(),

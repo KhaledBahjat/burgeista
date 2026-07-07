@@ -51,7 +51,7 @@ class _CheckOutViewState extends State<CheckOutView> {
                 HeightSpace(18),
                 CoustomText(
                   text: 'Success !',
-                  fontSize: 28,
+                  fontSize: 30,
                   fontWeight: FontWeight.w700,
                   color: AppColor.primaryColor,
                 ),
