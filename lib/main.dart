@@ -1,7 +1,10 @@
 import 'package:burgeista/core/routing/router_generator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const Burgerista());
 }
 class Burgerista extends StatelessWidget {
