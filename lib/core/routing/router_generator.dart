@@ -3,6 +3,7 @@ import 'package:burgeista/features/auth/views/profile.dart';
 import 'package:burgeista/features/auth/views/sign_in_view.dart';
 import 'package:burgeista/features/auth/views/sign_up_view.dart';
 import 'package:burgeista/features/cart/views/cart_view.dart';
+import 'package:burgeista/features/checkout/views/check_out_view.dart';
 import 'package:burgeista/features/home/views/home_view.dart';
 import 'package:burgeista/features/orderhistory/views/order_view.dart';
 import 'package:burgeista/features/proudcts/views/proudct_details_view.dart';
@@ -57,6 +58,11 @@ class RouterGenerator {
         path: AppRouts.signUpView,
         builder: (context, state) => SignUpView(),
       ),
+      GoRoute(
+        name: AppRouts.checkoutView,
+        path: AppRouts.checkoutView,
+        builder: (context, state) =>  CheckOutView(),
+      )
     ],
   );
 }

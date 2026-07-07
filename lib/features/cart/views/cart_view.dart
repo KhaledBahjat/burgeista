@@ -1,7 +1,8 @@
-import 'package:burgeista/core/constant/spacing.dart';
+import 'package:burgeista/core/routing/app_routs.dart';
 import 'package:burgeista/features/cart/widgets/cart_item.dart';
-import 'package:burgeista/features/proudcts/widgets/add_to_cart_widget.dart';
+import 'package:burgeista/core/widgets/total_with_btn_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CartView extends StatefulWidget {
   const CartView({super.key});
@@ -107,7 +108,7 @@ class _CartViewState extends State<CartView> {
           ),
         ),
         child: TotalWithBtnWidget( 
-          onAddT: () {},
+          onAddT: ()=>GoRouter.of(context).pushNamed(AppRouts.checkoutView),
           buttonText: 'Checkout',
           totalPrice: 18.19,
         ),

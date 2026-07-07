@@ -1,7 +1,7 @@
 
 import 'package:burgeista/core/constant/spacing.dart';
 import 'package:burgeista/core/widgets/coustom_text.dart';
-import 'package:burgeista/features/proudcts/widgets/add_to_cart_widget.dart';
+import 'package:burgeista/core/widgets/total_with_btn_widget.dart';
 import 'package:burgeista/features/proudcts/widgets/option_card.dart';
 import 'package:burgeista/features/proudcts/widgets/slider.dart';
 import 'package:flutter/material.dart';

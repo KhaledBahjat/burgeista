@@ -6,7 +6,6 @@ void main() {
 }
 class Burgerista extends StatelessWidget {
   const Burgerista({super.key});
-
   @override
   Widget build(BuildContext context) {
     return  ScreenUtilInit(

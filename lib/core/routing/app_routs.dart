@@ -8,4 +8,5 @@ class AppRouts {
   static const String profileView = '/profile';
   static const String productDetailsView = '/product_details';
   static const String orderView = '/order';
+  static const String checkoutView = '/checkout';
 }
